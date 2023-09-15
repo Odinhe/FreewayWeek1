@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ScoreController : MonoBehaviour
+public class Player2Score : MonoBehaviour
 {
-    [SerializeField] private int player1Score;
+    [SerializeField] private int player2Score;
 
 
-    public static ScoreController Singleton;
+    public static Player2Score Singleton;
 
 
     public TMP_Text playerScoreText;
     private void Awake()
     {
-        if(Singleton == null)
+        if (Singleton == null)
         {
             Singleton = this;
         }
@@ -24,20 +24,20 @@ public class ScoreController : MonoBehaviour
         }
     }
 
-    public void IncrementPlayer1Score()
+    public void IncrementPlayer2Score()
     {
-        player1Score++;
-        playerScoreText.text = player1Score.ToString();
+        player2Score++;
+        playerScoreText.text = player2Score.ToString();
     }
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
