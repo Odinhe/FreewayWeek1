@@ -12,6 +12,8 @@ public class Player2Control : MonoBehaviour
     private BoxCollider2D Collider;
 
     public float knockBackDistence;
+
+    [SerializeField] Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +29,14 @@ public class Player2Control : MonoBehaviour
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 transform.position += new Vector3(0, movementSpeed * Time.deltaTime);
+                animator.SetInteger("Direction", -1);
             }
-            if (Input.GetKey(KeyCode.DownArrow))
+            else if (Input.GetKey(KeyCode.DownArrow))
             {
                 transform.position += new Vector3(0, -movementSpeed * Time.deltaTime);
+                animator.SetInteger("Direction", 1);
             }
+            else animator.SetInteger("Direction", 0);
         }
     }
 
